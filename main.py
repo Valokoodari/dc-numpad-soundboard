@@ -73,3 +73,5 @@ if __name__ == "__main__":
         list_sounds()
         with Listener(on_press=on_press) as listener:
             listener.join()
+    else:
+        print("You must be in a voice channel")
