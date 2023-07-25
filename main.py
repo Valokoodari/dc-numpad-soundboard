@@ -60,7 +60,10 @@ def list_sounds():
 def on_press(key):
     num0 = 82 if platform.system() == "Darwin" else 96
     if hasattr(key, "vk") and num0 < key.vk <= num0 + 6:
-        c.play_soundboard_sound(key.vk - num0)
+        if c.get_selected_voice_channel()["data"] is not None:
+            c.play_soundboard_sound(key.vk - num0)
+        else:
+            print("You must be in a voice channel")
 
 
 if __name__ == "__main__":
@@ -68,10 +71,7 @@ if __name__ == "__main__":
     c.start()
     c.authenticate(TOKEN if TOKEN else authorize())
 
-    voice_channel = c.get_selected_voice_channel()
-    if voice_channel["data"] is not None:
-        list_sounds()
-        with Listener(on_press=on_press) as listener:
-            listener.join()
-    else:
-        print("You must be in a voice channel")
+    list_sounds()
+
+    with Listener(on_press=on_press) as listener:
+        listener.join()

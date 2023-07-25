@@ -25,4 +25,4 @@ CLIENT_SECRET=<Discord Application Client Secret>
 TOKEN=<Discord Access Token after first run> (Optional, asks for Authorization every time if not set)
 ```
 
-Join a voice channel before starting this script with `python main.py`.
+Start the script with `python main.py`.
