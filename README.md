@@ -1,6 +1,7 @@
 # Discord Numpad Soundboard
 
 [![](https://dcbadge.vercel.app/api/server/nzJgMjt)](https://discord.gg/nzJgMjt)
+[![pypresence](https://img.shields.io/badge/using-pypresence-00bb88.svg?style=for-the-badge&logo=discord&logoWidth=20)](https://github.com/qwertyquerty/pypresence)
 
 A simple Python script to allow you to use your numpad to activate default Discord Soundboard sounds.
 
