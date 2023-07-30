@@ -53,7 +53,7 @@ def authorize():
 def list_sounds():
     sounds = c.get_soundboard_sounds()
     print("Available sounds:")
-    for sound in sounds["data"]:
+    for sound in filter(lambda s: int(s["sound_id"]) < 7, sounds["data"]):
         print(f"  {sound['sound_id']} {sound['emoji_name']} {sound['name']}")
 
 
